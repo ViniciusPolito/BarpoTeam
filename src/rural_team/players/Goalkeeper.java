@@ -1,5 +1,7 @@
 package rural_team.players;
 
+import java.util.Random;
+
 import easy_soccer_lib.PlayerCommander;
 import easy_soccer_lib.utils.EFieldSide;
 import easy_soccer_lib.utils.EMatchState;
@@ -103,15 +105,15 @@ public class Goalkeeper extends RegularPlayer {
 			} else {
 				_printf_once("GK: Catching the ball (right side)...");
 				//commander.doCatch(MAX_PRIORITY);
-				commander.doKickToPoint(100.0d, new Vector2D(52.0d, 0));//Rebater
+				commander.doKickToPoint(100.0d, new Vector2D(-52.0d, 0));//Rebater
 			}
 
 		} else {
 			if (isAlignedTo(ballPosition)) {
-				_printf_once("ATK: Running to the ball...");
+				_printf_once("GK: Running to the ball...");
 				commander.doDashBlocking(100.0d);
 			} else {
-				_printf("ATK: Turning...");
+				_printf("GK: Turning...");
 				commander.doTurnToPointBlocking(ballPosition);
 			}
 		}

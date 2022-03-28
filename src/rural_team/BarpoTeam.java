@@ -23,7 +23,6 @@ public class BarpoTeam extends AbstractTeam {
 		Formations formation = new Formations();
 		Vector2D form;
 		form = formation.initalHexaFormation(commander);
-		//form = formation.attackingFormation(commander);
 		
 		// se o time estiver no lado direito, faz o ajuste
 		if (commander.getMyFieldSide() == EFieldSide.RIGHT) {
@@ -32,13 +31,7 @@ public class BarpoTeam extends AbstractTeam {
 		}
 		
 		System.out.printf("Jogador %d, lado %s -- x %f, y %f  	\n", uniform, commander.getMyFieldSide(), form.getX(), form.getY());
-		/*
-		if (uniform >1) {
-			pl = new RegularPlayer(commander, form.getX(), form.getY());
-		} else {
-			pl = new Goalkeeper(commander, form.getX(), form.getY());
-		}
-		*/
+
 		if (uniform >= 2 && uniform <= 4) {
 			pl = new DefenserPlayer(commander, form.getX(), form.getY());
 		} else if(uniform >= 5) {
